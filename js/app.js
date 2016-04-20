@@ -38,15 +38,15 @@ var showAnswerer = function(answerer) {
 	// clone our result template code
 	var result = $('.templates .answerer').clone();
 	
-	// Set the question properties in result
-	var questionElem = result.find('.question-text a');
-	questionElem.attr('href', question.link);
-	questionElem.text(question.title);
+	// Set the display name properties in result
+	var answererElem = result.find('.displayName a');
+	answererElem.attr('href', answerer.user.link);
+	answererElem.text(answerer.user.display_name);
 
-	// sets the reputation
-	var viewed = result.find('.viewed');
-	viewed.text(question.view_count);
-
+	// sets the score
+	var score = result.find('.score');
+	score.text(answerer.score);
+	
 	return result;
 };
 
